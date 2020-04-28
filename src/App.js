@@ -25,11 +25,13 @@ function App() {
 
       <Router>
         <div>
+        <h3>
         <Link to="/">Home</Link>{' '}
         <Link to="/customerlist">Customerlist</Link>{' '}
         <Link to="/traininglist">Traininglist</Link>{' '}
+        </h3>
         <Switch>
-          <Route exact path="/" render={() => <h1>Home</h1>} />
+          <Route exact path="/" render={() => <h1>Welcome to PTrainer</h1>} />
           <Route path="/customerlist" component={Customerlist} />
           <Route path="/traininglist" component={Traininglist} />
           <Route render={() => <h1>Page not found</h1>} />

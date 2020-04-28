@@ -1,6 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import ReactTable from 'react-table-v6';
 import 'react-table-v6/react-table.css';
+import moment from 'moment';
 
 export default function Trainiglist() {
     const [trainings, setTrainings] = useState([]);
@@ -23,7 +24,8 @@ export default function Trainiglist() {
         },
         {
             Header: 'Date',
-            accessor: 'date'
+            accessor: 'date',
+            Cell: row => (moment(row.value).format('DD.MM.YYYY HH:mm'))
         },
         {
             Header: 'Duration (min)',
@@ -31,7 +33,7 @@ export default function Trainiglist() {
         },
         {
             Header: 'Customer',
-            accessor: 'customer.firstname'
+            Cell: row => (row.original.customer.firstname+' '+row.original.customer.lastname)
         }
     ]
 
