@@ -3,7 +3,7 @@ import ReactTable from 'react-table-v6';
 import 'react-table-v6/react-table.css';
 import moment from 'moment';
 
-export default function Trainiglist() {
+export default function Traininglist() {
     const [trainings, setTrainings] = useState([]);
 
     useEffect(() => {
@@ -39,6 +39,7 @@ export default function Trainiglist() {
 
     return(
         <div>
+            <h1>Trainings</h1>
             <ReactTable defaultPageSize={10} filterable={true} data={trainings} columns={columns} />
         </div>
     );
