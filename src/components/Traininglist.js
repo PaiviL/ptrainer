@@ -46,7 +46,7 @@ export default function Traininglist() {
         {
             Header: 'Date',
             accessor: 'date',
-            Cell: row => moment(row.value).format('DD.MM.YYYY HH:mm')//
+            Cell: row => moment(row.value).format('DD.MM.YYYY HH:mm')
         },
         {
             Header: 'Duration (min)',

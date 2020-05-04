@@ -14,12 +14,13 @@ import MomentUtils from '@date-io/moment';
 export default function Addtraining(props) {
     const [open, setOpen] = useState(false);
     const [training, setTraining] = useState({activity: '', date: '', duration: ''});
-    //const [selectedDate, handleDateChange] = useState(new Date());
 
     const handleClickOpen = () => {
         setOpen(true);
     }
     const handleClose = () => {
+        console.log(props.customer.links[0].href);
+        console.log(training);
         props.addTraining(props.customer.links[0].href, training);
         setOpen(false);
     }
@@ -29,6 +30,10 @@ export default function Addtraining(props) {
 
     const inputChanged = (event) => {
         setTraining({...training, [event.target.name]: event.target.value});
+    }
+
+    const handleDateChange = (date) => {
+        setTraining({...training, date: moment(date._d).toISOString()});
     }
 
     return(
@@ -54,19 +59,13 @@ export default function Addtraining(props) {
                         label="Activity"
                         fullWidth
                     />
-                    {/* <KeyboardDateTimePicker 
+                    <KeyboardDateTimePicker
+                        margin="dense"              
                         name="date"
-                        value={training.date} 
-                        onChange={inputChanged}
-                        label="Date"
+                        value={training.date}
+                        onChange={date => handleDateChange(date)}
                         
-                    /> */}
-                    <TextField
-                        margin="dense"
-                        id="date"
-                        name="date"
-                        value={moment(training.date).toISOString()}//
-                        onChange={inputChanged}
+                        format="DD.MM.YYYY HH:mm"
                         label="Date"
                         fullWidth
                     />
@@ -93,4 +92,3 @@ export default function Addtraining(props) {
         </div>
     )
 }
-//<MuiPickersUtilsProvider utils={MomentUtils}></MuiPickersUtilsProvider>

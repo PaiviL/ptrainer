@@ -73,6 +73,8 @@ export default function Customerlist() {
     }
 
     const addTraining = (link, training) => {
+        console.log(training);
+        console.log(link);
         fetch('https://customerrest.herokuapp.com/api/trainings', 
             {
                 method: 'POST',
