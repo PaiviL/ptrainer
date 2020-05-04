@@ -63,8 +63,7 @@ export default function Addtraining(props) {
                         margin="dense"              
                         name="date"
                         value={training.date}
-                        onChange={date => handleDateChange(date)}
-                        
+                        onChange={date => handleDateChange(date)}  
                         format="DD.MM.YYYY HH:mm"
                         label="Date"
                         fullWidth
