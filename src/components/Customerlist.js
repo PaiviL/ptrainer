@@ -141,7 +141,6 @@ export default function Customerlist() {
             Cell: row => (<Editcustomer customer={row.original} updateCustomer={updateCustomer} />)
         },
         {
-            //accessor: 'links[0].href', //del(row.value)
             sortable: false,
             filterable: false,
             minWidth: 50,
@@ -171,4 +170,3 @@ export default function Customerlist() {
     );
 
 }
-//

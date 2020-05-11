@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-//import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-//import MomentUtils from '@date-io/moment';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Customerlist from './components/Customerlist';
 import Traininglist from './components/Traininglist';
@@ -10,6 +8,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Calendar from './components/Calendar';
 
 function App() {
   return (
@@ -32,11 +31,13 @@ function App() {
         <Link to="/">Home</Link>{' '}
         <Link to="/customerlist">Customerlist</Link>{' '}
         <Link to="/traininglist">Traininglist</Link>{' '}
+        <Link to="/calendar">Calendar</Link>{' '}
         </h4>
         <Switch>
           <Route exact path="/" render={() => <h1>Welcome to PTrainer</h1>} />
           <Route path="/customerlist" component={Customerlist} />
           <Route path="/traininglist" component={Traininglist} />
+          <Route path="/calendar" component={Calendar} />
           <Route render={() => <h1>Page not found</h1>} />
         </Switch>
         </div>
@@ -47,5 +48,3 @@ function App() {
 }
 
 export default App;
-//<Customerlist />
-//<Traininglist />
